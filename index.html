@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 40px;
+            background-color: #f4f7fa;
+            font-family: roboto;
+        }
+        .container {
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            margin-bottom: 25px;
+            color: #444;
+            text-align: center;
+            font-weight: 600;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        .btn-delete {
+            cursor: pointer;
+            background-color: transparent;
+            background-image: url('assets/delete.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: none;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            transition: transform 0.2s ease;
+        }
+        .btn-delete:hover {
+            transform: scale(1.2);
+        }
+        .table {
+            margin-top: 30px;
+        }
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 15px;
+        }
+        .income {
+            background-color: #d4eddad8;
+            color: #155724d2;
+            font-weight: 500;
+        }
+        .expense {
+            background-color: #f8d7dad3;
+            color: #721c25d7;
+            font-weight: 500;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+        .form-row > .col-auto {
+            margin-bottom: 15px;
+        }
+        @media (max-width: 768px) {
+            .table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Task Manager</h2>
+        <form id="taskForm">
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label class="sr-only" for="title">Title</label>
+                    <select id="title" class="form-control mb-2" required>
+                        <option value="">Select Title</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="description">Description</label>
+                    <input type="text" id="description" class="form-control mb-2" placeholder="Description" required>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="amount">Amount</label>
+                    <input type="text" id="amount" class="form-control mb-2" placeholder="Amount" required>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="date">Date</label>
+                    <input type="date" id="date" class="form-control mb-2">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-1">Submit</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="mt-1">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tasksBody">
+                    <!-- Task rows will be injected here -->
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <th colspan="3" class="text-right">Balance:</th>
+                        <th id="totalAmount">0</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

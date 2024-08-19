@@ -1,0 +1,81 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+        body {
+            padding-top: 40px;
+            background-color: #f4f7fa;
+         
+            font-family: roboto;
+        }
+        .container {
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            margin-bottom: 25px;
+            color: #444;
+            text-align: center;
+            font-weight: 600;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        .btn-delete {
+            cursor: pointer;
+            color: transparent;
+            background-color: transparent;
+            background-image: url('assets/delete.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            line-height: 0;
+            transition: transform 0.2s ease;
+        }
+        .btn-delete:hover {
+            transform: scale(1.2);
+        }
+        .table {
+            margin-top: 30px;
+        }
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 15px;
+        }
+        .income {
+            background-color: #d4eddad8;
+            color: #155724d2;
+            font-weight: 500;
+        }
+        .expense {
+            background-color: #f8d7dad3;
+            color: #721c25d7;
+            font-weight: 500;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+        .form-row > .col-auto {
+            margin-bottom: 15px;
+        }
+     */
