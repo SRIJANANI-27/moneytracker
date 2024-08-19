@@ -25,6 +25,8 @@
             color: #444;
             text-align: center;
             font-weight: 600;
+            font-family: "Playfair Display";
+            font-style: italic;
         }
         .form-control {
             border-radius: 8px;
@@ -88,11 +90,40 @@
                 overflow-x: auto;
             }
         }
+
+        .button_slide{
+    /* color: black; */
+    border: 2px solid lightskyblue;
+    border-radius: 7px;
+    padding: 3px 12px;
+    display: inline-block;
+    font-family:roboto;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 lightskyblue;
+    transition: ease-out 0.5s;
+  margin-left: 4px;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+  }
+  
+  .slide_right:hover {
+    box-shadow: inset 400px 0 0 0 lightskyblue;
+    color: whitesmoke;
+  }
+  .button_slide:hover a,i{
+    color: blue;
+  }
+  .btn{
+    outline: none;
+    border: none;
+  }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Balance Buddy</h2>
+        <h2>Balance Buddy ⚖️</h2>
         <form id="taskForm">
             <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -115,8 +146,11 @@
                     <label class="sr-only" for="date">Date</label>
                     <input type="date" id="date" class="form-control mb-2">
                 </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-1">Submit</button>
+                <!-- <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-1">Submit </button>
+                </div> -->
+                <div class="button_slide slide_right">
+                    <button type="submit" class="btn button_slide slide_right">Submit 📃</button>
                 </div>
             </div>
         </form>
