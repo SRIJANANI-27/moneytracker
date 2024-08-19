@@ -56,20 +56,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const renderTasks = () => {
         const tasks = getTasksFromLocalStorage();
         tasksBody.innerHTML = '';
+        let totalAmount = 0;
+
         tasks.forEach((task, index) => {
             const rowClass = task.title === 'income' ? 'income' : 'expense';
+            const amount = parseFloat(task.amount);
+            
+            // Update totalAmount based on income or expense
+            totalAmount += task.title === 'income' ? amount : -amount;
+            
             const row = `<tr class="${rowClass}">
                 <td>${index + 1}</td>
                 <td>${task.title}</td>
                 <td>${task.description}</td>
-                <td>${parseFloat(task.amount).toLocaleString()}</td>
+                <td>${amount.toLocaleString()}</td>
                 <td>${formatDate(task.date)}</td>
                 <td><button class="btn btn-delete" data-index="${index}"></button></td>
             </tr>`;
             tasksBody.insertAdjacentHTML('beforeend', row);
         });
 
-        const totalAmount = tasks.reduce((total, task) => total + parseFloat(task.amount || 0), 0);
+        // Display total amount, formatted
         totalAmountElem.textContent = totalAmount.toLocaleString();
     };
 
